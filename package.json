@@ -1,10 +1,10 @@
 {
-    "name": "node-red-contrib-ssh-coco",
+    "name": "node-red-contrib-ssh-simple",
     "version": "0.2.3",
     "description": "A Node-RED node for running remote ssh commands and supports reconnection attempts. Based on https://github.com/yroffin/node-red-contrib-ssh",
     "repository": {
         "type": "git",
-        "url": "git@github.com:nofr1ends/node-red-contrib-ssh.git"
+        "url": "git@github.com:echobops/node-red-contrib-simple.git"
     },
     "keywords": [
         "node-red",
@@ -12,19 +12,19 @@
         "ssl",
         "client"
     ],
-    "author": "Jonas Bernemann",
+    "author": "Michael Whitaker",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/nofr1ends/node-red-contrib-ssh/issues"
+        "url": "https://github.com/echobops/node-red-contrib-simple/issues"
     },
     "node-red": {
         "nodes": {
-            "ssh-client-v2": "src/ssh-client-v2.js"
+            "ssh-client-simple": "src/ssh-client-v2.js"
         }
     },
     "dependencies": {
         "async-mutex": "^0.2.4",
         "ssh2": "0.8.9"
     },
-    "homepage": "https://github.com/nofr1ends/node-red-contrib-ssh"
+    "homepage": "https://github.com/echobops/node-red-contrib-simple"
 }

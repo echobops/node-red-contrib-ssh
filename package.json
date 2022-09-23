@@ -4,7 +4,7 @@
     "description": "A Node-RED node for running remote ssh commands and supports reconnection attempts. Based on https://github.com/yroffin/node-red-contrib-ssh",
     "repository": {
         "type": "git",
-        "url": "git@github.com:echobops/node-red-contrib-simple.git"
+        "url": "git@github.com:echobops/node-red-contrib-ssh-simple.git"
     },
     "keywords": [
         "node-red",
@@ -15,7 +15,7 @@
     "author": "Michael Whitaker",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/echobops/node-red-contrib-simple/issues"
+        "url": "https://github.com/echobops/node-red-contrib-ssh-simple/issues"
     },
     "node-red": {
         "nodes": {
@@ -26,5 +26,5 @@
         "async-mutex": "^0.2.4",
         "ssh2": "0.8.9"
     },
-    "homepage": "https://github.com/echobops/node-red-contrib-simple"
+    "homepage": "https://github.com/echobops/node-red-contrib-ssh-simple"
 }

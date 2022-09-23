@@ -53,7 +53,11 @@ module.exports = function (RED) {
         })
 
         //node.log("SSH Key:"+config.ssh);
-        node.client.connect(node.options);
+        try{
+            node.client.connect(node.options);
+        } catch(err) {
+            
+        }
     }
 
     function NodeRedSsh(config) {
@@ -64,9 +68,9 @@ module.exports = function (RED) {
         node.options = {
             host: config.hostname,
             port: 22,
-            username: node.credentials.username ? node.credentials.username : undefined,
-            password: node.credentials.password ? node.credentials.password : undefined,
-            privateKey: config.ssh ? require('fs').readFileSync(config.ssh) : undefined
+            username: "",
+            password: "",
+            privateKey: undefined
         };
 
         node.connectMutex = new Mutex();
@@ -85,6 +89,14 @@ module.exports = function (RED) {
                 node.warn("Invalid msg.payload.");
                 return;
             }
+            
+            node.options = {
+              host: node.hostname || msg.hostname,
+              port: 22,
+              username: node.username || msg.username,
+              password: node.password || msg.password,
+              privateKey: undefined
+            };
 
             const release = await node.sendMutex.acquire();
 
@@ -149,7 +161,7 @@ module.exports = function (RED) {
     }
 
     // Register this node
-    RED.nodes.registerType("ssh-client-v2", NodeRedSsh, {
+    RED.nodes.registerType("ssh-simple-v1", NodeRedSsh, {
         credentials: {
             email: { type: "text" },
             username: { type: "text" },

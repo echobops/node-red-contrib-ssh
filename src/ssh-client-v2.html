@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('ssh-client-v2', {
+    RED.nodes.registerType('ssh-client-simple', {
         category: 'input',
         defaults: {
             debug: {value:false},
@@ -20,7 +20,7 @@
     });
 </script>
 
-<script type="text/x-red" data-template-name="ssh-client-v2">
+<script type="text/x-red" data-template-name="ssh-client-simple">
     <div class="form-row">
         <label for="node-input-debug"><i class="fa fa-server"></i> Debug</label>
         <input type="checkbox" id="node-input-debug" placeholder="">
@@ -47,6 +47,6 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="ssh-client-v2">
+<script type="text/x-red" data-help-name="ssh-client-simple">
     <p>A simple node that handle ssh client</p>
 </script>
